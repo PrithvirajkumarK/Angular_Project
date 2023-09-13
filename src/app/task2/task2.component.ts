@@ -8,5 +8,5 @@ import { Component, Input } from '@angular/core';
 export class Task2Component {
  @Input () image =""
  @Input () movieName =""
- @Input () movieDiscription =""
+ @Input () movieDescription =""
 }
