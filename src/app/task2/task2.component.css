@@ -1,0 +1,105 @@
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: Roboto , sans-serif;
+}
+section{
+    background-color: white;
+    border-radius: 50px;
+}
+img:hover{
+    transform: scale(1.1);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+img{
+    height: 350px;
+    width: 250px;
+    display: flex;
+    margin: 0 auto;
+    border-radius: 60px;
+    /* padding: 20px; */
+    transition: all 1s;
+    
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    padding:20px;
+    margin: 0 auto;
+    text-align: center;
+    height: 320px;
+    /* transition: all 1s; */
+}
+.discription{
+    transition: all 1s;
+    color: hsla(44, 31%, 39%, 0.763);
+}
+.discription:hover{
+    transform: scale(1.1);
+}
+.title:hover{
+    transform: scale(1.1);
+}
+.title p{
+    font-weight: 700;
+}
+.title{
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    /* transform: translateX(50px); */
+    margin: 0 auto;
+    transition: all 1s;
+}
+
+@media (min-width:760px){
+    body{
+        display: flex;
+        flex-direction: column;
+        font-family: Roboto , sans-serif;
+    }
+    section{
+        background-color: white;
+        border-radius: 50px;
+    }
+    img:hover{
+        transform: scale(1.1);
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    }
+    img{
+        height: 350px;
+        width: 250px;
+        display: flex;
+        margin: 0 auto;
+        border-radius: 60px;
+        padding: 20px;
+        
+        
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+        padding:20px;
+        margin: 0 auto;
+        text-align: center;
+        /* transition: all 1s; */
+    }
+    .discription{
+        transition: all 1s;
+    }
+    .discription:hover{
+        transform: scale(1.1);
+    }
+    .title:hover{
+        transform: scale(1.1);
+    }
+    .title{
+        display: flex;
+        align-items: center;
+        gap: 5rem;
+        /* transform: translateX(50px); */
+        margin: 0 auto;
+        transition: all 1s;
+    }
+    
+}

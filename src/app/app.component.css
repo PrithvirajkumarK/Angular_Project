@@ -1,0 +1,15 @@
+section{
+    display: flex;
+    flex-direction: column;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    background-color: whitesmoke;
+}
+ @media(min-width:760px){
+    section{
+        display: grid;
+        flex-direction: row;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        background-color: whitesmoke;
+    }
+    
+} 
