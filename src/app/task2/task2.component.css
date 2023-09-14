@@ -6,9 +6,6 @@ body{
 section{
     background-color: white;
     border-radius: 50px;
-}
-img:hover{
-    transform: scale(1.1);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 img{
@@ -18,7 +15,6 @@ img{
     margin: 0 auto;
     border-radius: 60px;
     /* padding: 20px; */
-    transition: all 1s;
     object-fit: cover;
 }
 .content{
@@ -34,12 +30,12 @@ img{
     transition: all 1s;
     color: hsla(44, 31%, 39%, 0.763);
 }
-.description:hover{
+/* .description:hover{
     transform: scale(1.1);
-}
-.title:hover{
+} */
+/* .title:hover{
     transform: scale(1.1);
-}
+} */
 .title p{
     font-weight: 700;
 }
@@ -49,7 +45,7 @@ img{
     gap: 5rem;
     /* transform: translateX(50px); */
     margin: 0 auto;
-    transition: all 1s;
+    /* transition: all 1s; */
 }
 
 @media (min-width:760px){
@@ -61,9 +57,6 @@ img{
     section{
         background-color: white;
         border-radius: 50px;
-    }
-    img:hover{
-        transform: scale(1.1);
         box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     }
     img{
@@ -84,22 +77,22 @@ img{
         text-align: center;
         /* transition: all 1s; */
     }
-    .discription{
+    /* .discription{
         transition: all 1s;
-    }
-    .discription:hover{
+    } */
+    /* .discription:hover{
         transform: scale(1.1);
-    }
-    .title:hover{
+    } */
+    /* .title:hover{
         transform: scale(1.1);
-    }
+    } */
     .title{
         display: flex;
         align-items: center;
         gap: 4rem;
         /* transform: translateX(50px); */
         margin: 0 auto;
-        transition: all 1s;
+        /* transition: all 1s; */
     }
     
 }
