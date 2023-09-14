@@ -1,0 +1,8 @@
+<input type="text" id="MovieName" [ngModel]="movieName" />
+<input type="text" id="MovieImage" [ngModel]="movieImage" />
+<input type="number" id="MovieRating" [ngModel]="movieRating" />
+<input type="text" id="movieDescription" [ngModel]="movieDescription" />
+<button (click)="addmovie()">Add Movie</button>
+<section>
+  <app-task2 *ngFor="let nm of movies" [movie]="nm"></app-task2>
+</section>

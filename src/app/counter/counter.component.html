@@ -1,0 +1,22 @@
+<div class="counter-container">
+  <button class="like" (click)="increment()">👍{{ count }}</button>
+  <button class="like" (click)="decrement()">👎{{ dcount }}</button>
+  <!-- <h1 class="count">{{ count }}</h1> -->
+  <!-- <input
+    type="range"
+    min="0"
+    max="{{ count + dcount }}"
+    value="{{ count }}"
+    name=""
+    id=""
+  /> -->
+  <progress
+    type="range"
+    min="0"
+    max="{{ count + dcount }}"
+    value="{{ count }}"
+    name=""
+    id=""
+  ></progress>
+</div>
+<h2 *ngIf="msg">Your are awesome🎉🎉</h2>

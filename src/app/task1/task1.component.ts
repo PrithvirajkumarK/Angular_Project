@@ -8,4 +8,5 @@ import { Component, Input } from '@angular/core';
 export class Task1Component {
   @Input () name = ""
   @Input () image = ""
+  
 }

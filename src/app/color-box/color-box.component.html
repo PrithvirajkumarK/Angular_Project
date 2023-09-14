@@ -1,0 +1,4 @@
+<input [style.background]="clr" type="text" name="" id="" [(ngModel)]="clr" />
+<button (click)="addColor()">Add Color</button>
+<app-box *ngFor="let color of colorList" [clr]="color"></app-box>
+<!-- [ngStyle]="{ background: clr }" -->

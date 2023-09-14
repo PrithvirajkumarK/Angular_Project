@@ -1,14 +1,14 @@
 <body>
   <section>
     <div class="image">
-      <img src="{{ image }}" alt="" />
+      <img src="{{ movie.poster }}" alt="" />
     </div>
     <div class="content">
       <div class="title">
-        <h2>{{ movieName }}</h2>
-        <p>⭐ 9.1</p>
+        <h2>{{ movie.name }}</h2>
+        <p>⭐ {{ movie.rating }}</p>
       </div>
-      <p class="description">{{ movieDescription }}</p>
+      <p class="description">{{ movie.summary }}</p>
     </div>
   </section>
 </body>

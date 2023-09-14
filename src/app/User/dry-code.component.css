@@ -1,3 +1,9 @@
+/* img{
+    height: 10rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    object-fit: cover;
+} */
 body{
     display: flex;
     flex-direction: column;
@@ -21,13 +27,13 @@ img{
     transition: all 1s;
     object-fit: cover;
 }
-.content{
+.movie-container{
     display: flex;
     flex-direction: column;
     padding:20px;
     margin: 0 auto;
     text-align: center;
-    height: 220px;
+    height: 320px;
     /* transition: all 1s; */
 }
 .description{
@@ -37,13 +43,13 @@ img{
 .description:hover{
     transform: scale(1.1);
 }
-.title:hover{
+.movie-details:hover{
     transform: scale(1.1);
 }
-.title p{
+.movie-details p{
     font-weight: 700;
 }
-.title{
+.movie-details{
     display: flex;
     align-items: center;
     gap: 5rem;
@@ -68,15 +74,15 @@ img{
     }
     img{
         height: 350px;
-        width: 310px;
+        width: 250px;
         display: flex;
         margin: 0 auto;
         border-radius: 60px;
         padding: 20px;
-        object-fit: cover;
+        
         
     }
-    .content{
+    .movie-container{
         display: flex;
         flex-direction: column;
         padding:20px;
@@ -90,10 +96,10 @@ img{
     .discription:hover{
         transform: scale(1.1);
     }
-    .title:hover{
+    .movie-details:hover{
         transform: scale(1.1);
     }
-    .title{
+    .movie-details{
         display: flex;
         align-items: center;
         gap: 5rem;
