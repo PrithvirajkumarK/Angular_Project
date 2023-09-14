@@ -96,7 +96,7 @@ img{
     .title{
         display: flex;
         align-items: center;
-        gap: 5rem;
+        gap: 4rem;
         /* transform: translateX(50px); */
         margin: 0 auto;
         transition: all 1s;
