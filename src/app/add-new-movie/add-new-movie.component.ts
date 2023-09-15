@@ -7,11 +7,13 @@ import { MovieService } from '../movie.service';
   styleUrls: ['./add-new-movie.component.css']
 })
 export class AddNewMovieComponent {
-  
+  movieid:string=""
   movieName:string=""
   movieImage:string=""
   movieRating:number=0
   movieDescription:string=""
+  movietrailer:string=""
+
 
   moviesList;
   constructor(movieService: MovieService){
@@ -19,10 +21,12 @@ export class AddNewMovieComponent {
   }
   addmovie(){
     const movie={
+      "id":this.movieid,
       "name":this.movieName,
       "poster":this.movieImage,
       "rating": this.movieRating,
       "summary": this.movieDescription,
+      "trailer":this.movietrailer
     }
     this.moviesList.push(movie)
     console.log(movie)

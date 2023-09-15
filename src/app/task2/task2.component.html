@@ -19,8 +19,8 @@
           color="primary"
           aria-label="Expand summary"
         >
-          <mat-icon>expand_less</mat-icon>
-          <!-- <mat-icon>expand_more</mat-icon> -->
+          <mat-icon *ngIf="show">expand_less</mat-icon>
+          <mat-icon *ngIf="!show">expand_more</mat-icon>
         </button>
         <p>⭐{{ movie.rating }}</p>
       </div>
