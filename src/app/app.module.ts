@@ -12,6 +12,15 @@ import { ColorBoxComponent } from './color-box/color-box.component';
 import { BoxComponent } from './box/box.component';
 import { FormsModule } from '@angular/forms';
 import { AddMovieComponent } from './add-movie/add-movie.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { WelcomemsgComponent } from './welcomemsg/welcomemsg.component';
+import { NotfoundComponent } from './notfound/notfound.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatBadgeModule} from '@angular/material/badge';
+import { AddNewMovieComponent } from './add-new-movie/add-new-movie.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +33,21 @@ import { AddMovieComponent } from './add-movie/add-movie.component';
     ColorBoxComponent,
     BoxComponent,
     AddMovieComponent,
+    WelcomemsgComponent,
+    NotfoundComponent,
+    AddNewMovieComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

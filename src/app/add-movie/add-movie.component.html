@@ -1,10 +1,18 @@
-<section class="movie-container">
-  <input type="text" id="MovieName" [ngModel]="movieName" />
-  <input type="text" id="MovieImage" [ngModel]="movieImage" />
-  <input type="number" id="MovieRating" [ngModel]="movieRating" />
-  <input type="text" id="movieDescription" [ngModel]="movieDescription" />
-  <button (click)="addmovie()">Add Movie</button>
-</section>
-<section>
-  <app-task2 *ngFor="let nm of movies" [movie]="nm"></app-task2>
+<!-- <input type="text" id="MovieName" placeholder="MovieName" /> -->
+<!-- <input
+    type="text"
+    id="MovieImage"
+    placeholder="MovieUrl"
+    [(ngModel)]="movieImage"
+  /> -->
+<!-- <input
+    type="number"
+    id="MovieRating"
+    placeholder="MovieRatings"
+    [(ngModel)]="movieRating"
+  /> -->
+<!-- <input type="text" id="movieDescription" [(ngModel)]="movieDescription" /> -->
+
+<section class="movie-list">
+  <app-task2 *ngFor="let nm of moviesList" [movie]="nm"></app-task2>
 </section>

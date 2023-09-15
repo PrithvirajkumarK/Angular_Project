@@ -1,0 +1,24 @@
+<section class="input-container">
+  <mat-form-field>
+    <mat-label>Movie-Name</mat-label>
+    <input [(ngModel)]="movieName" matInput placeholder="Ex. Name" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Movie-Image</mat-label>
+    <input [(ngModel)]="movieImage" matInput placeholder="Ex. Url" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Movie-Rating</mat-label>
+    <input [(ngModel)]="movieRating" matInput placeholder="Ex. 8" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Movie-Description</mat-label>
+    <input [(ngModel)]="movieDescription" matInput placeholder="Ex. summary" />
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="addmovie()">
+    Add Movie
+  </button>
+</section>

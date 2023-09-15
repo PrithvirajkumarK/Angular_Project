@@ -1,3 +1,7 @@
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+/>
 <body>
   <section>
     <div class="image">
@@ -5,10 +9,44 @@
     </div>
     <div class="content">
       <div class="title">
-        <h2>{{ movie.name }}</h2>
+        <h2>
+          {{ movie.name }}
+        </h2>
+        <button
+          class="click"
+          (click)="lesssummary()"
+          mat-icon-button
+          color="primary"
+          aria-label="Expand summary"
+        >
+          <mat-icon>expand_less</mat-icon>
+          <!-- <mat-icon>expand_more</mat-icon> -->
+        </button>
         <p>⭐{{ movie.rating }}</p>
       </div>
-      <p class="description">{{ movie.summary }}</p>
+      <p *ngIf="show" class="description">{{ movie.summary }}</p>
+    </div>
+    <div class="like">
+      <button
+        (click)="increment()"
+        mat-icon-raised-button
+        color="primary"
+        matBadge="{{ count }}"
+        matBadgePosition="after"
+        matBadgeColor="accent"
+      >
+        <mat-icon>thumb_up</mat-icon>
+      </button>
+      <button
+        (click)="decrement()"
+        mat-icon-raised-button
+        color="primary"
+        matBadge="{{ dcount }}"
+        matBadgePosition="after"
+        matBadgeColor="accent"
+      >
+        <mat-icon>thumb_down</mat-icon>
+      </button>
     </div>
   </section>
 </body>

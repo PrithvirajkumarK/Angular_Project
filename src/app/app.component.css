@@ -10,4 +10,20 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     background-color: whitesmoke;
 } */
-    
+
+ul li{
+    list-style-type: none;
+}
+ul{
+    display: flex;
+    gap: 20px;
+    background-color: hsl(235, 27%, 49%);
+    height: 40px;
+    align-items: center;
+    margin: 0;
+}
+
+a{
+    text-decoration: dashed;
+    color: white;
+}
