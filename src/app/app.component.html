@@ -47,12 +47,16 @@
 <!-- <section><app-add-movie></app-add-movie></section> -->
 <header>
   <nav>
-    <ul>
-      <li><a routerLink="/">Home</a></li>
+    <mat-toolbar color="primary">
+      <!-- <li><a routerLink="/">Home</a></li>
       <li><a routerLink="/Add-movies">Add-Movies</a></li>
-      <li><a routerLink="/login">Movies</a></li>
+      <li><a routerLink="/login">Movies</a></li> -->
       <!-- <li><a routerLink="/movies">Movies</a></li> -->
-    </ul>
+
+      <button mat-button routerLink="/">Home</button>
+      <button mat-button routerLink="/movie-list">Movies</button>
+      <button mat-button routerLink="/Add-movies">Add Movie</button>
+    </mat-toolbar>
   </nav>
 </header>
 <router-outlet></router-outlet>

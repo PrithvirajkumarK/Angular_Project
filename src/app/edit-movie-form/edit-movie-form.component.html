@@ -1,5 +1,5 @@
 <section class="input-container">
-  <form [formGroup]="movieForm" (ngSubmit)="addmovie()" class="main-container">
+  <form [formGroup]="movieForm" (ngSubmit)="editmovie()" class="main-container">
     <mat-form-field>
       <mat-label>Movie-Name</mat-label>
       <input matInput formControlName="name" placeholder="Ex. Name" />
@@ -74,7 +74,7 @@
       </mat-error>
     </mat-form-field>
     <button [disabled]="movieForm.invalid" mat-raised-button color="primary">
-      Add Movie
+      Save Movie
     </button>
   </form>
 </section>

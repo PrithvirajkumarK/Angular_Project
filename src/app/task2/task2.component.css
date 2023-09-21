@@ -33,9 +33,7 @@ img{
     gap: 4rem;
     margin: 0 auto;
 }
-.title button{
-    transform: translateX(-70px);
-}
+ 
 .like{
     display: flex;
     padding-left: 25px;

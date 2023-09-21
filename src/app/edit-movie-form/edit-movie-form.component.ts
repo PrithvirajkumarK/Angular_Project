@@ -1,23 +1,26 @@
 import { Component } from '@angular/core';
-import { MovieService } from '../movie.service';
-import { FormBuilder, Validators } from '@angular/forms';
 import { movie } from '../app.component';
-import { Router } from '@angular/router';
+import { FormBuilder, Validators } from '@angular/forms';
+import { MovieService } from '../movie.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-add-new-movie',
-  templateUrl: './add-new-movie.component.html',
-  styleUrls: ['./add-new-movie.component.css']
+  selector: 'app-edit-movie-form',
+  templateUrl: './edit-movie-form.component.html',
+  styleUrls: ['./edit-movie-form.component.css']
 })
-export class AddNewMovieComponent {
-    // movieid:string=""
-    // movieName:string=""
-    // movieImage:string=""
-    // movieRating:number=0
-    // movieDescription:string=""
-    // movietrailer:string=""
+export class EditMovieFormComponent {
 
+  id: string = '';
 
+  movie: movie = {
+    id: '',
+    name: '',
+    poster: '',
+    rating: 0,
+    summary: '',
+    trailer: '',
+  };
   movieForm = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(5)]],
     rating: [0, [Validators.required, Validators.min(1), Validators.max(10)]],
@@ -40,12 +43,25 @@ export class AddNewMovieComponent {
     ],
   });
 
-  moviesList;
-  constructor(private movieService: MovieService,private fb:FormBuilder,private router:Router){
-    this.moviesList= movieService.movieList;
+  constructor(
+    private route: ActivatedRoute,
+    private fb: FormBuilder,
+    private movieService: MovieService,
+    private router: Router
+  ) {
+    const { id } = this.route.snapshot.params;
+    this.id = id;
   }
 
-  get name() {
+  ngOnInit() {
+this.movieService
+      .getMovieById(this.id)
+      .subscribe((mvList) => {
+        this.movieForm.patchValue(mvList);
+      });
+  }
+
+  get name() {  
     return this.movieForm?.get('name');
   }
   get poster() {
@@ -61,11 +77,11 @@ export class AddNewMovieComponent {
     return this.movieForm?.get('trailer');
   }
 
-  addmovie(){
+  editmovie(){
     const newmovie= this.movieForm.value
     if(this.movieForm.valid){
-      this.movieService.addMovieList(newmovie as movie).subscribe(() =>{ 
-        this.router.navigate(["/movie-list"])})
+      this.movieService.updateMovieList(newmovie as movie).subscribe(() =>{ 
+        this.router.navigate(["/movies"])})
 
       
       console.log(newmovie);

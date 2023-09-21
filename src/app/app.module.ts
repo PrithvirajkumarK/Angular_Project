@@ -10,7 +10,7 @@ import { CounterComponent } from './counter/counter.component';
 import { DynamicClrComponent } from './dynamic-clr/dynamic-clr.component';
 import { ColorBoxComponent } from './color-box/color-box.component';
 import { BoxComponent } from './box/box.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddMovieComponent } from './add-movie/add-movie.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
@@ -21,6 +21,10 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatBadgeModule} from '@angular/material/badge';
 import { AddNewMovieComponent } from './add-new-movie/add-new-movie.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { EditMovieFormComponent } from './edit-movie-form/edit-movie-form.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,8 @@ import { AddNewMovieComponent } from './add-new-movie/add-new-movie.component';
     WelcomemsgComponent,
     NotfoundComponent,
     AddNewMovieComponent,
-    
+    MovieDetailsComponent,
+    EditMovieFormComponent    
   ],
   imports: [
     BrowserModule,
@@ -47,7 +52,10 @@ import { AddNewMovieComponent } from './add-new-movie/add-new-movie.component';
     MatInputModule,
     MatFormFieldModule,
     MatIconModule,
-    MatBadgeModule
+    MatBadgeModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,23 +5,31 @@
 <body>
   <section>
     <div class="image">
-      <img src="{{ movie.poster }}" alt="" />
+      <img src="{{ movie.poster }}" alt="Related movie poster" />
     </div>
     <div class="content">
       <div class="title">
         <h2>
-          {{ movie.name }}
+          {{ movie.name
+          }}<button
+            class="click"
+            (click)="lesssummary()"
+            mat-icon-button
+            color="primary"
+            aria-label="Expand summary"
+          >
+            <mat-icon *ngIf="show">expand_less</mat-icon>
+            <mat-icon *ngIf="!show">expand_more</mat-icon>
+          </button>
+          <button
+            (click)="getdetails()"
+            mat-icon-button
+            color="primary"
+            aria-label=""
+          >
+            <mat-icon>info</mat-icon>
+          </button>
         </h2>
-        <button
-          class="click"
-          (click)="lesssummary()"
-          mat-icon-button
-          color="primary"
-          aria-label="Expand summary"
-        >
-          <mat-icon *ngIf="show">expand_less</mat-icon>
-          <mat-icon *ngIf="!show">expand_more</mat-icon>
-        </button>
         <p>⭐{{ movie.rating }}</p>
       </div>
       <p *ngIf="show" class="description">{{ movie.summary }}</p>
@@ -46,6 +54,14 @@
         matBadgeColor="accent"
       >
         <mat-icon>thumb_down</mat-icon>
+      </button>
+      <button
+        (click)="editmovie()"
+        mat-icon-button
+        color="primary"
+        aria-label=""
+      >
+        <mat-icon>edit</mat-icon>
       </button>
     </div>
   </section>

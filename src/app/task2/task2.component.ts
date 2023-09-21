@@ -1,4 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { MovieService } from '../movie.service';
+import { movie } from '../app.component';
 
 @Component({
   selector: 'app-task2',
@@ -9,15 +12,16 @@ export class Task2Component {
 //  @Input () image =""
 //  @Input () movieName =""
 //  @Input () movieDescription =""
-@Input () movie={
-  "id": "99",
-  "name": "Vikram",
-      "poster": "https://m.media-amazon.com/images/M/MV5BMmJhYTYxMGEtNjQ5NS00MWZiLWEwN2ItYjJmMWE2YTU1YWYxXkEyXkFqcGdeQXVyMTEzNzg0Mjkx._V1_.jpg",
-      "rating": 8.4,
-      "summary": "Members of a black ops team must track and eliminate a gang of masked murderers.",
-      "trailer": "https://www.youtube.com/embed/OKBMCL-frPU"
+@Input () movie:movie={
+  id: "",
+  name: "",
+      poster: "",
+      rating: 0,
+      summary: "",
+      trailer: ""
     
     }
+    
     count=0
     increment(){
       console.log("Increment")
@@ -31,6 +35,15 @@ export class Task2Component {
     show=true
     lesssummary(){
     this.show= !this.show;
+    }
+
+    constructor(private router:Router,private movieservice:MovieService){
+    }
+    getdetails(){
+      this.router.navigate(['/movies',this.movie.id])
+    }
+    editmovie(){
+      this.router.navigate(['/movies/edit', this.movie.id])
     }
    
    
