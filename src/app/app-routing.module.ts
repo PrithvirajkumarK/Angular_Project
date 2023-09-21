@@ -11,11 +11,15 @@ import { EditMovieFormComponent } from './edit-movie-form/edit-movie-form.compon
 const routes: Routes = [{path:"",component:WelcomemsgComponent, pathMatch:"full"},
 {path:"movie-list",component:AddMovieComponent, pathMatch:"full"},
 {path:"flim",redirectTo:"/movies", pathMatch:"full"},
-{path:"movies",component:Task2Component, pathMatch:"full"},
-{path:"movies/:id",component:MovieDetailsComponent, pathMatch:"full"},
-{path:"movies/edit/:id",component:EditMovieFormComponent, pathMatch:"full"},
-{path:"Add-movies",component:AddNewMovieComponent, pathMatch:"full"},
-{ path: '**', component: NotfoundComponent,pathMatch:"full" }];
+// {path:"movies",
+// children:[
+//   {path:"",component:AddMovieComponent, pathMatch:"full"},
+// {path:"movies/:id",component:MovieDetailsComponent, pathMatch:"full"},
+// {path:"movies/edit/:id",component:EditMovieFormComponent, pathMatch:"full"},
+// {path:"Add-movies",component:AddNewMovieComponent, pathMatch:"full"}]},
+// { path: '**', component: NotfoundComponent,pathMatch:"full" }];
+{path:"movies", loadChildren:() => import('./movies/movies.module').then(m => m.MoviesModule)}
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

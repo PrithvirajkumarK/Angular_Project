@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { MovieService } from '../movie.service';
 import { movie } from '../app.component';
@@ -22,6 +22,7 @@ export class Task2Component {
     
     }
     
+    @Output() removeMovie = new EventEmitter();
     count=0
     increment(){
       console.log("Increment")
@@ -46,6 +47,10 @@ export class Task2Component {
       this.router.navigate(['/movies/edit', this.movie.id])
     }
    
-   
- 
+    deleteMovie() {
+      this.movieservice.deleteMovieById(this.movie.id).subscribe(() => {
+        console.log('Movie deleted successfully');
+        this.removeMovie.emit();
+      });
+}
 }

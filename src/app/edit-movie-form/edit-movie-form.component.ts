@@ -22,6 +22,7 @@ export class EditMovieFormComponent {
     trailer: '',
   };
   movieForm = this.fb.group({
+    id:'',
     name: ['', [Validators.required, Validators.minLength(5)]],
     rating: [0, [Validators.required, Validators.min(1), Validators.max(10)]],
     poster: [
@@ -81,7 +82,7 @@ this.movieService
     const newmovie= this.movieForm.value
     if(this.movieForm.valid){
       this.movieService.updateMovieList(newmovie as movie).subscribe(() =>{ 
-        this.router.navigate(["/movies"])})
+        this.router.navigate(["/movies/"])})
 
       
       console.log(newmovie);

@@ -119,7 +119,14 @@ export class MovieService {
   }
 
   updateMovieList(movie:movie){
-    return this.http.post('https://64f6f44c9d7754084952d964.mockapi.io/movie', movie)
+    const id =movie.id;
+    return this.http.put(`https://64f6f44c9d7754084952d964.mockapi.io/movie/${id}`, movie);
+  }
+
+  deleteMovieById(id: string) {
+    return this.http.delete<movie>(
+      `https://64f6f44c9d7754084952d964.mockapi.io/movie/${id}`
+    );
   }
   setMovieList(newMovie: movie) {
     this.movieList.push(newMovie);
