@@ -25,6 +25,12 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { EditMovieFormComponent } from './edit-movie-form/edit-movie-form.component';
+import {MatListModule} from '@angular/material/list';
+import { MatOptionModule } from '@angular/material/core';
+import { MatRadioButton } from '@angular/material/radio';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
+
 
 @NgModule({
   declarations: [
@@ -55,7 +61,11 @@ import { EditMovieFormComponent } from './edit-movie-form/edit-movie-form.compon
     MatBadgeModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatListModule,
+    MatOptionModule,
+    MatRadioModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

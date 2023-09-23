@@ -105,11 +105,14 @@ export class AddMovieComponent {
   constructor(private movieService: MovieService) {}
   
   ngOnInit() {
+   this.loadMoviesData()
+  }
+  loadMoviesData(){
     this.getMovieList = this.movieService
-      .getMovieListFromMockAPI()
-      .subscribe((mvList) => {
-        this.movieList = mvList;
-      });
+    .getMovieListFromMockAPI()
+    .subscribe((mvList) => {
+      this.movieList = mvList;
+    });
   }
 
   ngOnChanges() {

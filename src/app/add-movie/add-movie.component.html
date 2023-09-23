@@ -14,5 +14,9 @@
 <!-- <input type="text" id="movieDescription" [(ngModel)]="movieDescription" /> -->
 
 <section class="movie-list">
-  <app-task2 *ngFor="let nm of movieList" [movie]="nm"></app-task2>
+  <app-task2
+    *ngFor="let nm of movieList"
+    [movie]="nm"
+    (removeMovie)="loadMoviesData()"
+  ></app-task2>
 </section>

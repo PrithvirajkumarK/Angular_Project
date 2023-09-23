@@ -12,15 +12,8 @@ export class Task2Component {
 //  @Input () image =""
 //  @Input () movieName =""
 //  @Input () movieDescription =""
-@Input () movie:movie={
-  id: "",
-  name: "",
-      poster: "",
-      rating: 0,
-      summary: "",
-      trailer: ""
-    
-    }
+@Input () movie:any
+
     
     @Output() removeMovie = new EventEmitter();
     count=0

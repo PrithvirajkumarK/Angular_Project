@@ -3,6 +3,7 @@ import { MovieService } from '../movie.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { movie } from '../app.component';
 import { Router } from '@angular/router';
+import { LANGUAGES,GENRES} from './global';
 
 @Component({
   selector: 'app-add-new-movie',
@@ -18,9 +19,13 @@ export class AddNewMovieComponent {
     // movietrailer:string=""
 
 
+    languages = LANGUAGES;
+
+    genres = GENRES;
   movieForm = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(5)]],
     rating: [0, [Validators.required, Validators.min(1), Validators.max(10)]],
+    languages:[[]],
     poster: [
       '',
       [
@@ -38,6 +43,8 @@ export class AddNewMovieComponent {
         Validators.pattern('^http.*'),
       ],
     ],
+    genres:[[]],
+    censorRating:[]
   });
 
   moviesList;
@@ -60,6 +67,7 @@ export class AddNewMovieComponent {
   get trailer() {
     return this.movieForm?.get('trailer');
   }
+  
 
   addmovie(){
     const newmovie= this.movieForm.value

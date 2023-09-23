@@ -43,6 +43,32 @@
       </mat-error>
     </mat-form-field>
 
+    <h3>Censor Rating</h3>
+    <mat-radio-group
+      formControlName="censorRating"
+      aria-label="Select an Censor rating"
+    >
+      <mat-radio-button value="U">U</mat-radio-button>
+      <mat-radio-button value="U/A">U/A</mat-radio-button>
+      <mat-radio-button value="A">A</mat-radio-button>
+      <mat-radio-button value="R">R</mat-radio-button>
+    </mat-radio-group>
+
+    <mat-form-field>
+      <mat-label>Genres</mat-label>
+      <mat-select formControlName="genres" multiple>
+        <mat-option *ngFor="let genre of genres" [value]="genre.value">{{
+          genre.label
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-selection-list formControlName="languages" multiple>
+      <mat-list-option *ngFor="let lang of languages" [value]="lang.value">{{
+        lang.label
+      }}</mat-list-option>
+    </mat-selection-list>
+
     <mat-form-field>
       <mat-label>Movie-Description</mat-label>
       <input matInput formControlName="summary" placeholder="Ex. summary" />
@@ -74,7 +100,12 @@
       </mat-error>
     </mat-form-field>
     <button [disabled]="movieForm.invalid" mat-raised-button color="primary">
-      Add Movie
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Example home icon"
+        fontIcon="add"
+      ></mat-icon>
+      {{ "Add Movie" | uppercase }}
     </button>
   </form>
 </section>

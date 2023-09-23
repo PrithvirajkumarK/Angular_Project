@@ -32,6 +32,9 @@
         </h2>
         <p>⭐{{ movie.rating }}</p>
       </div>
+      <p>{{ movie.cast?.join(" | ") }}</p>
+      <p>{{ movie.genres?.join(" | ") }}</p>
+      <p>{{ movie.languages?.join(" | ") }}</p>
       <p *ngIf="show" class="description">{{ movie.summary }}</p>
     </div>
     <div class="like">
